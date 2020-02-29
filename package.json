@@ -2,20 +2,21 @@
   "name": "reactapp",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://robofriendsapp.github.io/",
+  "homepage": "https://baqarali7.github.io/RobofriendsApp.github.io/",
   "dependencies": {
-    "gh-pages": "2.1.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
     "react-scripts": "3.3.0",
+    "redux": "^4.0.4",
     "tachyons": "^4.11.1"
   },
   "scripts": {
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -35,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }

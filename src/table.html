@@ -1,0 +1,53 @@
+function Column(caption,position,isVisible,values){
+  this.caption = caption;
+  this.position = position;
+  this.isVisible = isVisible;
+  this.values = values;
+}
+
+
+Column.prototype.printValue = function (index){
+      return  "<td>"+ this.values[index] +"</td>";
+};
+
+
+var columnArray = [                    
+                    new Column("Id",0,true,[1,2,3]),
+                    new Column("Name",1,true,["Tim","Jim","Tom"]),
+                    new Column("Date",2,true,["27-03-2014","01-01-2014","11-04-2015"])
+                  ];
+
+function columnSorter(columnA,columnB){
+  if(columnA.position < columnB.position)
+    return -1;
+  if(columnA.position > columnB.position)
+    return 1;
+  return 0;
+}
+
+
+columnArray.sort(columnSorter);
+
+
+function generateTable(columnArray){
+  var htmlString = "<table><thead><tr>";
+
+  for(var col in columnArray){
+    htmlString += "<th>"+columnArray[col].caption+"</th>";
+  }
+
+  htmlString += "<tfoot></tfoot>";
+
+  htmlString += "<tbody>";
+  for(var i=0;i<columnArray[0].values.length;i++){
+    htmlString += "<tr>";
+    for(col in columnArray){
+      htmlString += columnArray[col].printValue(i);
+    }
+    htmlString += "</tr>";
+  }
+  htmlString +="</tbody>";
+
+  htmlString += "</tr></thead>";
+  return htmlString += "</table>";
+}
